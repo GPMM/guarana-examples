@@ -32,6 +32,11 @@
                 <simpleCondition role="onLookAt"/>
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
             </causalConnector>
+            
+            <causalConnector id="onLookAwayStop">
+                <simpleCondition role="onLookAway"/>
+                <simpleAction role="stop" max="unbounded" qualifier="par"/>
+            </causalConnector>
         </connectorBase>
     </head>
 
@@ -48,7 +53,8 @@
         
         <media id="louvre360" src="louvre.ncl360">
             <media id="vid360" label="mainVideo"/>
-            <media id="map" label="mapImage"/>
+            <media id="map0" label="mapFloor0"/>
+            <media id="map1" label="mapFloor1"/>
             <media id="outPic" label="scene1Photo"/>
             <media id="outInf" label="scene1Info"/>
             <media id="statue" label="scene2Statue"/>
@@ -71,7 +77,7 @@
             <bind role="onEnd" component="intro"/>
             <bind role="start" component="louvre"/>
             <bind role="start" component="louvre360" interface="vid360"/>
-            <bind role="start" component="louvre360" interface="map"/>
+            <bind role="start" component="louvre360" interface="map0"/>
             <bind role="start" component="louvre360" interface="outPic">
                 <bindParam name="del" value="5s"/>
             </bind>
@@ -98,6 +104,7 @@
             <bind role="onEnd" component="louvre" interface="scene2"/>
             <bind role="stop" component="louvre360" interface="statue"/>
             <bind role="stop" component="louvre360" interface="objInf"/>
+            <bind role="stop" component="louvre360" interface="map0"/>
         </link>
         
         <!-- inicia e para a cena 3 -->
@@ -106,18 +113,25 @@
             <bind role="onBegin" component="louvre" interface="scene3"/>
             <bind role="start" component="louvre360" interface="monaVid"/>
             <bind role="start" component="louvre360" interface="monaInf"/>
+            <bind role="start" component="louvre360" interface="map1"/>
         </link>
         
         <link xconnector="onEndStop">
             <bind role="onEnd" component="louvre" interface="scene3"/>
             <bind role="stop" component="louvre360" interface="monaVid"/>
             <bind role="stop" component="louvre360" interface="monaInf"/>
+            <bind role="stop" component="louvre360" interface="map1"/>
         </link>
         
         <!-- interacao da cena 3 -->
         <link xconnector="onLookAtStart">
             <bind role="onLookAt" component="louvre360" interface="monaInf"/>
             <bind role="start" component="louvre360" interface="fotos"/>
+        </link>
+        
+        <link xconnector="onLookAwayStop">
+            <bind role="onLookAway" component="louvre360" interface="monaInf"/>
+            <bind role="stop" component="louvre360" interface="fotos"/>
         </link>
     </body>
 </ncl>

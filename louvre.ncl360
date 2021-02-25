@@ -20,14 +20,15 @@
     
     <body>
         <media id="mainVideo" src="louvre360.mp4" descriptor="d360"/>
-        <media id="mapImage" src="louvreMap1.jpg" descriptor="dmap"/>
+        <media id="mapFloor0" src="louvreMap0.jpg" descriptor="dmap"/>
+        <media id="mapFloor1" src="louvreMap1.jpg" descriptor="dmap"/>
         
         <!-- cena 1 -->
         <media id="scene1Photo" src="pic_visitors.png" descriptor="dobj"/>
         <media id="scene1Info" src="info_visitors.txt" descriptor="dtxt"/>
         
         <!-- cena 2 -->
-        <media id="scene2Statue" src="estatua.???" descriptor="dobj"/>
+        <media id="scene2Statue" src="diane.obj" descriptor="dobj"/>
         <media id="scene2Info" src="info_museum.txt" descriptor="dtxt"/>
         
         <!-- cena 3 -->
