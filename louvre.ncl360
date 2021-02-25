@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<ncl360 id="visita_louvre">
+    <head>
+        <!-- regioes customizadas -->
+        <region id="rtxt" polar="-90d" azimuthal="0d" width="0.4m" height="0.3m" radius="4m" pin="environment" zIndex="2"/>
+        <region id="robj" polar="-90d" azimuthal="0d" width="0.4m" height="0.3m" radius="4m" pin="environment" zIndex="2"/>
+        <region id="rmap" polar="350d" azimuthal="0d" width="1.75m" height="1m" radius="5m" pin="camera" zIndex="1"/>
+        <region id="rmona" polar="4.5d" azimuthal="1d" radius="5m" pin="environment" zIndex="2"/>
+        <region id="rvid" polar="7d" azimuthal="28d" width="1m" height="0.667m" radius="3m" pin="environment" zIndex="2"/>
+        
+        <!-- caracteristicas de apresentacao -->
+        <descriptor id="d360" region="default.sky" volume="0"/>
+        <descriptor id="dmap" region="rmap"/>
+        <descriptor id="dtxt" region="rtxt"/>
+        <descriptor id="dobj" region="robj"/>
+        <descriptor id="dmona" region="rmona" soundType="3D" volume="1"/>
+        <descriptor id="dvid" region="rvid" volume="0"/>
+    </head>
+    
+    <body>
+        <media id="mainVideo" src="louvre360.mp4" descriptor="d360"/>
+        <media id="mapImage" src="louvreMap1.jpg" descriptor="dmap"/>
+        
+        <!-- cena 1 -->
+        <media id="scene1Photo" src="pic_visitors.png" descriptor="dobj"/>
+        <media id="scene1Info" src="info_visitors.txt" descriptor="dtxt"/>
+        
+        <!-- cena 2 -->
+        <media id="scene2Statue" src="estatua.???" descriptor="dobj"/>
+        <media id="scene2Info" src="info_museum.txt" descriptor="dtxt"/>
+        
+        <!-- cena 3 -->
+        <media id="scene3Sound" src="pic_sounds.mp3" descriptor="dmona"/>
+        <media id="scene3Drawing" src="drawing_monalisa.mp4" descriptor="dvid"/>
+        <media id="scene3Info" src="info_monalisa.txt" descriptor="dtxt"/>
+    </body>
+</ncl360>
