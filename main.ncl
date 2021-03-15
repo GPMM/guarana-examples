@@ -8,6 +8,7 @@
         
         <descriptorBase>
             <descriptor id="bgDesc" region="bgReg"/>
+            <descriptor id="conDesc" region="bgReg" focusIndex="0"/>
         </descriptorBase>
         
         <connectorBase>
@@ -51,7 +52,7 @@
     <body>
         <!-- esperar usuario conectar Guarana -->
         <port id="entry" component="connect"/>
-        <media id="connect" src="media/connect.png" descriptor="bgDesc"/>
+        <media id="connect" src="media/connect.png" descriptor="conDesc"/>
         
         <link xconnector="onSelectionStopStart">
             <bind role="onSelection" component="connect"/>
@@ -70,23 +71,23 @@
         </media>
         
         <media id="louvre360" src="louvre.ncl360">
-            <media id="vid360" label="mainVideo"/>
-            <media id="map0" label="mapFloor0"/>
-            <media id="map1" label="mapFloor1"/>
-            <media id="outPic" label="scene1Photo"/>
-            <media id="outInf" label="scene1Info"/>
-            <media id="statue" label="scene2Statue"/>
-            <media id="objInf" label="scene2Info"/>
-            <media id="fotos" label="scene3Sound"/>
-            <media id="monaVid" label="scene3Drawing"/>
-            <media id="monaInf" label="scene3Info"/>
+            <area id="vid360" label="mainVideo"/>
+            <area id="map0" label="mapFloor0"/>
+            <area id="map1" label="mapFloor1"/>
+            <area id="outPic" label="scene1Photo"/>
+            <area id="outInf" label="scene1Info"/>
+            <area id="statue" label="scene2Statue"/>
+            <area id="objInf" label="scene2Info"/>
+            <area id="fotos" label="scene3Sound"/>
+            <area id="monaVid" label="scene3Drawing"/>
+            <area id="monaInf" label="scene3Info"/>
         </media>
         
         <!-- envia a cena no início da introducao -->
         <link xconnector="onBeginStart">
             <linkParam name="del" value="10"/>
             <bind role="onBegin" component="intro"/>
-            <bind role="start" component="louvre360"/>  <!-- esse start faria o envio -->
+            <bind role="start" component="louvre360"/>
         </link>
         
         <!-- inicia e para a cena 1 -->
@@ -139,6 +140,7 @@
             <bind role="stop" component="louvre360" interface="monaVid"/>
             <bind role="stop" component="louvre360" interface="monaInf"/>
             <bind role="stop" component="louvre360" interface="map1"/>
+            <bind role="stop" component="louvre360" interface="vid360"/>
         </link>
         
         <!-- interacao da cena 3 -->
