@@ -45,7 +45,10 @@
         
         <media id="intro" src="media/intro.mp4" descriptor="bgDesc"/>
         
-        <media id="louvre" src="media/louvre.mp4" descriptor="bgDesc">
+        <!-- esperar usuario conectar Guarana -->
+        <media id="connect" src="" descriptor=""/>
+        
+        <media id="louvre" src="media/louvre2D.mp4" descriptor="bgDesc">
             <area id="scene1" end="29s"/>
             <area id="scene2" begin="29.5s" end="55s"/>
             <area id="scene3" begin="55.5s"/>
@@ -66,7 +69,7 @@
         
         <!-- envia a cena no início da introducao -->
         <link xconnector="onBeginStart">
-            <linkParam name="del" value="0"/>
+            <linkParam name="del" value="10"/>
             <bind role="onBegin" component="intro"/>
             <bind role="start" component="louvre360"/>  <!-- esse start faria o envio -->
         </link>
