@@ -11,6 +11,14 @@
         </descriptorBase>
         
         <connectorBase>
+            <causalConnector id="onSelectionStopStart">
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="stop" max="unbounded" qualifier="par"/>
+                    <simpleAction role="start" max="unbounded" qualifier="par"/>
+                </compoundAction>
+            </causalConnector>
+            
             <causalConnector id="onBeginStart">
                 <connectorParam name="del"/>
                 <simpleCondition role="onBegin"/>
@@ -41,12 +49,19 @@
     </head>
 
     <body>
-        <port id="entry" component="intro"/>
+        <!-- esperar usuario conectar Guarana -->
+        <port id="entry" component="connect"/>
+        <media id="connect" src="media/connect.png" descriptor="bgDesc"/>
+        
+        <link xconnector="onSelectionStopStart">
+            <bind role="onSelection" component="connect"/>
+            <bind role="stop" component="connect"/>
+            <bind role="start" component="intro"/>
+        </link>
+        <!-- esperar usuario conectar Guarana -->
+        
         
         <media id="intro" src="media/intro.mp4" descriptor="bgDesc"/>
-        
-        <!-- esperar usuario conectar Guarana -->
-        <media id="connect" src="" descriptor=""/>
         
         <media id="louvre" src="media/louvre2D.mp4" descriptor="bgDesc">
             <area id="scene1" end="29s"/>
