@@ -32,7 +32,7 @@
         <media id="scene2Info" src="info_museum.txt" descriptor="dtxt"/>
         
         <!-- cena 3 -->
-        <media id="scene3Sound" src="pic_sounds.mp3" descriptor="dmona"/>
+        <media id="scene3Sound" src="photo.ogg" descriptor="dmona"/>
         <media id="scene3Drawing" src="drawing_monalisa.mp4" descriptor="dvid"/>
         <media id="scene3Info" src="info_monalisa.txt" descriptor="dtxt"/>
     </body>
