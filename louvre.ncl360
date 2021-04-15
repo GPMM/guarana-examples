@@ -4,7 +4,7 @@
     <head>
         <!-- regioes customizadas -->
         <region id="rtxt" polar="-90d" azimuthal="0d" width="0.4m" height="0.3m" radius="4m" pin="environment" zIndex="2"/>
-        <region id="robj" polar="-90d" azimuthal="35d" width="0.4m" height="0.3m" radius="4m" pin="environment" zIndex="2"/>
+        <region id="robj" polar="-90d" azimuthal="0d" width="0.4m" height="0.3m" radius="4m" pin="environment" zIndex="2"/>
         <region id="rmap" polar="350d" azimuthal="0d" width="1.75m" height="1m" radius="5m" pin="camera" zIndex="1"/>
         <region id="rmona" polar="4.5d" azimuthal="1d" radius="5m" pin="environment" zIndex="2"/>
         <region id="rvid" polar="7d" azimuthal="28d" width="1m" height="0.667m" radius="3m" pin="environment" zIndex="2"/>
