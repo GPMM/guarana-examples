@@ -19,21 +19,21 @@
     </head>
     
     <body>
-        <media id="mainVideo" src="louvre360.mp4" descriptor="d360"/>
-        <media id="mapFloor0" src="louvreMap0.jpg" descriptor="dmap"/>
-        <media id="mapFloor1" src="louvreMap1.jpg" descriptor="dmap"/>
+        <media id="mainVideo" src="https://github.com/GPMM/guarana-examples/raw/main/media/louvre360.mp4" descriptor="d360"/>
+        <media id="mapFloor0" src="https://github.com/GPMM/guarana-examples/raw/main/media/louvreMap0.jpg" descriptor="dmap"/>
+        <media id="mapFloor1" src="https://github.com/GPMM/guarana-examples/raw/main/media/louvreMap1.jpg" descriptor="dmap"/>
         
         <!-- cena 1 -->
-        <media id="scene1Photo" src="pic_visitors.png" descriptor="dobj"/>
-        <media id="scene1Info" src="info_visitors.txt" descriptor="dtxt"/>
+        <media id="scene1Photo" src="https://github.com/GPMM/guarana-examples/raw/main/media/pic_visitors.jpg" descriptor="dobj"/>
+        <media id="scene1Info" src="https://github.com/GPMM/guarana-examples/raw/main/media/info_visitors.txt" descriptor="dtxt"/>
         
         <!-- cena 2 -->
-        <media id="scene2Statue" src="diane.obj" descriptor="dobj"/>
-        <media id="scene2Info" src="info_museum.txt" descriptor="dtxt"/>
+        <media id="scene2Statue" src="https://github.com/GPMM/guarana-examples/raw/main/media/diane.obj" descriptor="dobj"/>
+        <media id="scene2Info" src="https://github.com/GPMM/guarana-examples/raw/main/media/info_museum.txt" descriptor="dtxt"/>
         
         <!-- cena 3 -->
-        <media id="scene3Sound" src="photo.ogg" descriptor="dmona"/>
-        <media id="scene3Drawing" src="drawing_monalisa.mp4" descriptor="dvid"/>
-        <media id="scene3Info" src="info_monalisa.txt" descriptor="dtxt"/>
+        <media id="scene3Sound" src="https://github.com/GPMM/guarana-examples/raw/main/media/photo.ogg" descriptor="dmona"/>
+        <media id="scene3Drawing" src="https://github.com/GPMM/guarana-examples/raw/main/media/drawing_monalisa.mp4" descriptor="dvid"/>
+        <media id="scene3Info" src="https://github.com/GPMM/guarana-examples/raw/main/media/info_monalisa.txt" descriptor="dtxt"/>
     </body>
 </ncl360>

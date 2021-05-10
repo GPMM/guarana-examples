@@ -52,7 +52,7 @@
     <body>
         <!-- esperar usuario conectar Guarana -->
         <port id="entry" component="connect"/>
-        <media id="connect" src="media/connect.png" descriptor="conDesc"/>
+        <media id="connect" src="https://github.com/GPMM/guarana-examples/raw/main/media/connect.png" descriptor="conDesc"/>
         
         <link xconnector="onSelectionStopStart">
             <bind role="onSelection" component="connect"/>
@@ -62,96 +62,89 @@
         <!-- esperar usuario conectar Guarana -->
         
         
-        <media id="intro" src="media/intro.mp4" descriptor="bgDesc"/>
+        <media id="intro" src="https://github.com/GPMM/guarana-examples/raw/main/media/intro.mp4" descriptor="bgDesc"/>
         
-        <media id="louvre" src="media/louvre2D.mp4" descriptor="bgDesc">
+        <media id="louvre" src="https://github.com/GPMM/guarana-examples/raw/main/media/louvre2D.mp4" descriptor="bgDesc">
             <area id="scene1" end="29s"/>
             <area id="scene2" begin="29.5s" end="55s"/>
             <area id="scene3" begin="55.5s"/>
         </media>
         
-        <media id="louvre360" src="louvre.ncl360">
-            <area id="vid360" label="mainVideo"/>
-            <area id="map0" label="mapFloor0"/>
-            <area id="map1" label="mapFloor1"/>
-            <area id="outPic" label="scene1Photo"/>
-            <area id="outInf" label="scene1Info"/>
-            <area id="statue" label="scene2Statue"/>
-            <area id="objInf" label="scene2Info"/>
-            <area id="fotos" label="scene3Sound"/>
-            <area id="monaVid" label="scene3Drawing"/>
-            <area id="monaInf" label="scene3Info"/>
+        <media id="louvre360" src="https://github.com/GPMM/guarana-examples/raw/main/louvre.ncl360">
+            <area id="mainVideo"/>
+            <area id="mapFloor0"/>
+            <area id="mapFloor1"/>
+            <area id="scene1Photo"/>
+            <area id="scene1Info"/>
+            <area id="scene2Statue"/>
+            <area id="scene2Info"/>
+            <area id="scene3Sound"/>
+            <area id="scene3Drawing"/>
+            <area id="scene3Info"/>
         </media>
-        
-        <!-- envia a cena no início da introducao -->
-        <link xconnector="onBeginStart">
-            <linkParam name="del" value="10"/>
-            <bind role="onBegin" component="intro"/>
-            <bind role="start" component="louvre360"/>
-        </link>
         
         <!-- inicia e para a cena 1 -->
         <link xconnector="onEndStart">
             <linkParam name="del" value="0"/>
             <bind role="onEnd" component="intro"/>
             <bind role="start" component="louvre"/>
-            <bind role="start" component="louvre360" interface="vid360"/>
-            <bind role="start" component="louvre360" interface="map0"/>
-            <bind role="start" component="louvre360" interface="outPic">
+            <bind role="start" component="louvre360" interface="mainVideo"/>
+            <bind role="start" component="louvre360" interface="mapFloor0"/>
+            <bind role="start" component="louvre360" interface="scene1Photo">
                 <bindParam name="del" value="5s"/>
             </bind>
-            <bind role="start" component="louvre360" interface="outInf">
+            <bind role="start" component="louvre360" interface="scene1Info">
                 <bindParam name="del" value="5s"/>
             </bind>
         </link>
         
         <link xconnector="onEndStop">
             <bind role="onEnd" component="louvre" interface="scene1"/>
-            <bind role="stop" component="louvre360" interface="outPic"/>
-            <bind role="stop" component="louvre360" interface="outInf"/>
+            <bind role="stop" component="louvre360" interface="scene1Photo"/>
+            <bind role="stop" component="louvre360" interface="scene1Info"/>
         </link>
         
         <!-- inicia e para a cena 2 -->
         <link xconnector="onBeginStart">
             <linkParam name="del" value="0"/>
             <bind role="onBegin" component="louvre" interface="scene2"/>
-            <bind role="start" component="louvre360" interface="statue"/>
-            <bind role="start" component="louvre360" interface="objInf"/>
+            <bind role="start" component="louvre360" interface="scene2Statue"/>
+            <bind role="start" component="louvre360" interface="scene2Info"/>
         </link>
         
         <link xconnector="onEndStop">
             <bind role="onEnd" component="louvre" interface="scene2"/>
-            <bind role="stop" component="louvre360" interface="statue"/>
-            <bind role="stop" component="louvre360" interface="objInf"/>
-            <bind role="stop" component="louvre360" interface="map0"/>
+            <bind role="stop" component="louvre360" interface="scene2Statue"/>
+            <bind role="stop" component="louvre360" interface="scene2Info"/>
+            <bind role="stop" component="louvre360" interface="mapFloor0"/>
         </link>
         
         <!-- inicia e para a cena 3 -->
         <link xconnector="onBeginStart">
             <linkParam name="del" value="0"/>
             <bind role="onBegin" component="louvre" interface="scene3"/>
-            <bind role="start" component="louvre360" interface="monaVid"/>
-            <bind role="start" component="louvre360" interface="monaInf"/>
-            <bind role="start" component="louvre360" interface="map1"/>
+            <bind role="start" component="louvre360" interface="scene3Drawing"/>
+            <bind role="start" component="louvre360" interface="scene3Info"/>
+            <bind role="start" component="louvre360" interface="mapFloor1"/>
         </link>
         
         <link xconnector="onEndStop">
             <bind role="onEnd" component="louvre" interface="scene3"/>
-            <bind role="stop" component="louvre360" interface="monaVid"/>
-            <bind role="stop" component="louvre360" interface="monaInf"/>
-            <bind role="stop" component="louvre360" interface="map1"/>
-            <bind role="stop" component="louvre360" interface="vid360"/>
+            <bind role="stop" component="louvre360" interface="scene3Drawing"/>
+            <bind role="stop" component="louvre360" interface="scene3Info"/>
+            <bind role="stop" component="louvre360" interface="mapFloor1"/>
+            <bind role="stop" component="louvre360" interface="mainVideo"/>
         </link>
         
         <!-- interacao da cena 3 -->
         <link xconnector="onLookAtStart">
-            <bind role="onLookAt" component="louvre360" interface="monaInf"/>
-            <bind role="start" component="louvre360" interface="fotos"/>
+            <bind role="onLookAt" component="louvre360" interface="scene3Info"/>
+            <bind role="start" component="louvre360" interface="scene3Sound"/>
         </link>
         
         <link xconnector="onLookAwayStop">
-            <bind role="onLookAway" component="louvre360" interface="monaInf"/>
-            <bind role="stop" component="louvre360" interface="fotos"/>
+            <bind role="onLookAway" component="louvre360" interface="scene3Info"/>
+            <bind role="stop" component="louvre360" interface="scene3Sound"/>
         </link>
     </body>
 </ncl>
