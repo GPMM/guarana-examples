@@ -52,7 +52,7 @@
     <body>
         <!-- esperar usuario conectar Guarana -->
         <port id="entry" component="connect"/>
-        <media id="connect" src="https://github.com/GPMM/guarana-examples/raw/main/media/connect.png" descriptor="conDesc"/>
+        <media id="connect" src="media/connect.png" descriptor="conDesc"/>
         
         <link xconnector="onSelectionStopStart">
             <bind role="onSelection" component="connect"/>
@@ -62,25 +62,25 @@
         <!-- esperar usuario conectar Guarana -->
         
         
-        <media id="intro" src="https://github.com/GPMM/guarana-examples/raw/main/media/intro.mp4" descriptor="bgDesc"/>
+        <media id="intro" src="media/intro.mp4" descriptor="bgDesc"/>
         
-        <media id="louvre" src="https://github.com/GPMM/guarana-examples/raw/main/media/louvre2D.mp4" descriptor="bgDesc">
+        <media id="louvre" src="media/louvre2D.mp4" descriptor="bgDesc">
             <area id="scene1" end="29s"/>
             <area id="scene2" begin="29.5s" end="55s"/>
             <area id="scene3" begin="55.5s"/>
         </media>
         
         <media id="louvre360" src="https://github.com/GPMM/guarana-examples/raw/main/louvre.ncl360">
-            <area id="mainVideo"/>
-            <area id="mapFloor0"/>
-            <area id="mapFloor1"/>
-            <area id="scene1Photo"/>
-            <area id="scene1Info"/>
-            <area id="scene2Statue"/>
-            <area id="scene2Info"/>
-            <area id="scene3Sound"/>
-            <area id="scene3Drawing"/>
-            <area id="scene3Info"/>
+            <area id="mainVideo" label="mainVideo"/>
+            <area id="mapFloor0" label="mapFloor0"/>
+            <area id="mapFloor1" label="mapFloor1"/>
+            <area id="scene1Photo" label="scene1Photo"/>
+            <area id="scene1Info" label="scene1Info"/>
+            <area id="scene2Statue" label="scene2Statue"/>
+            <area id="scene2Info" label="scene2Info"/>
+            <area id="scene3Sound" label="scene3Sound"/>
+            <area id="scene3Drawing" label="scene3Drawing"/>
+            <area id="scene3Info" label="scene3Info"/>
         </media>
         
         <!-- inicia e para a cena 1 -->
