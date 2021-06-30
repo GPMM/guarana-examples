@@ -70,7 +70,7 @@
             <area id="scene3" begin="55.5s"/>
         </media>
         
-        <media id="louvre360" type="application/x-ginga-ncl360" src="https://github.com/GPMM/guarana-examples/raw/main/louvre.ncl360">
+        <media id="louvre360" type="application/x-ncl360" src="https://github.com/GPMM/guarana-examples/raw/main/louvre.ncl360">
             <area id="mainVideo" label="mainVideo"/>
             <area id="mapFloor0" label="mapFloor0"/>
             <area id="mapFloor1" label="mapFloor1"/>
