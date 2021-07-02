@@ -34,6 +34,6 @@
         <!-- cena 3 -->
         <media id="scene3Sound" src="https://github.com/GPMM/guarana-examples/raw/main/media/photo.ogg" descriptor="dmona"/>
         <media id="scene3Drawing" src="https://github.com/GPMM/guarana-examples/raw/main/media/drawing_monalisa.mp4" descriptor="dvid"/>
-        <media id="scene3Info" src="https://github.com/GPMM/guarana-examples/raw/main/media/info_monalisa.txt" descriptor="dtxt"/>
+        <media id="scene3Info" src="https://github.com/GPMM/guarana-examples/raw/main/media/info_monalisa.txt" descriptor="dmona"/>
     </body>
 </ncl360>
