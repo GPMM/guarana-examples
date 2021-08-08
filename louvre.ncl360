@@ -10,7 +10,7 @@
         <region id="rvid" polar="7d" azimuthal="28d" width="1m" height="0.667m" radius="3m" pin="environment" zIndex="2"/>
         
         <!-- caracteristicas de apresentacao -->
-        <descriptor id="d360" region="default.sky" volume="0"/>
+        <descriptor id="d360" region="default.sky" volume="1"/>
         <descriptor id="dmap" region="rmap"/>
         <descriptor id="dtxt" region="rtxt"/>
         <descriptor id="dobj" region="robj"/>
